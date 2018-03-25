@@ -19,23 +19,32 @@ public class Voo {
 		this.status = Status.CONFIRMADO; // default é confirmado
 	}
 	
-	public Rota getRota() {
+	public Rota getRota()
+	{
 		return rota;
 	}
 	
 	public LocalDateTime getDatahora() {
+
 		return datahora;
 	}
 	
 	public Duration getDuracao() {
+
 		return duracao;
 	}
 	
 	public Status getStatus() {
+
 		return status;
 	}
 	
 	public void setStatus(Status novo) {
+
 		this.status = novo;
+	}
+
+	public String toString() {
+		return "\nRota: " + this.getRota() + "\nData: " + this.getDatahora() + "\nDuração: " + this.getDuracao() + "\nStatus: " + this.getStatus() + "\n";
 	}
 }

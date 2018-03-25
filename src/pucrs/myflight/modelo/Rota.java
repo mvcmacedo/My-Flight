@@ -13,19 +13,27 @@ public class Rota {
 		this.aeronave = aeronave;		
 	}	
 	
-	public CiaAerea getCia() {
+	public CiaAerea getCia()
+	{
 		return cia;
 	}
 	
 	public Aeroporto getDestino() {
+
 		return destino;
 	}
 	
 	public Aeroporto getOrigem() {
+
 		return origem;
 	}
 	
 	public Aeronave getAeronave() {
+
 		return aeronave;
+	}
+
+	public String toString() {
+		return "\nCia Aérea: " + this.getCia() + "\nDestino: " + this.getDestino() + "\nOrigem: " + this.getOrigem() + "\nAeronave: " + this.getAeronave() + "\n";
 	}
 }
