@@ -11,12 +11,15 @@ public class Voo {
 	private Duration duracao;
 	private Rota rota;
 	private Status status;
+	private GerenciadorVoos gerenciador;
 	
-	public Voo(Rota rota, LocalDateTime datahora, Duration duracao) {
+	public Voo(Rota rota, LocalDateTime datahora, Duration duracao, GerenciadorVoos gerenciador) {
 		this.rota = rota;
 		this.datahora = datahora;
 		this.duracao = duracao;
 		this.status = Status.CONFIRMADO; // default é confirmado
+		gerenciador.adicionar(this);
+
 	}
 	
 	public Rota getRota()
@@ -38,7 +41,11 @@ public class Voo {
 
 		return status;
 	}
-	
+
+	public GerenciadorVoos getGerenciador() {
+		return gerenciador;
+	}
+
 	public void setStatus(Status novo) {
 
 		this.status = novo;

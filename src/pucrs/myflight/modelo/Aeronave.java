@@ -4,11 +4,13 @@ public class Aeronave {
 	private String codigo;
 	private String descricao;
 	private int capacidade;
+	private GerenciadorAeronaves gerenciador;
 	
-	public Aeronave(String codigo, String descricao, int capacidade) {
+	public Aeronave(String codigo, String descricao, int capacidade, GerenciadorAeronaves gerenciador) {
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.capacidade = capacidade;
+		gerenciador.adicionar(this);
 	}
 	
 	public String getCodigo() {
@@ -22,6 +24,10 @@ public class Aeronave {
 
 	public int getCapacidade() {
 		return capacidade;
+	}
+
+	public GerenciadorAeronaves getGerenciador() {
+		return gerenciador;
 	}
 
 	public String toString() {

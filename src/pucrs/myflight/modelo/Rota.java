@@ -5,12 +5,14 @@ public class Rota {
 	private Aeroporto origem;
 	private Aeroporto destino;
 	private Aeronave aeronave;
+	private GerenciadorRotas gerenciador;
 	
-	public Rota(CiaAerea cia, Aeroporto origem, Aeroporto destino, Aeronave aeronave) {
+	public Rota(CiaAerea cia, Aeroporto origem, Aeroporto destino, Aeronave aeronave, GerenciadorRotas gerenciador) {
 		this.cia = cia;
 		this.origem = origem;
 		this.destino = destino;
-		this.aeronave = aeronave;		
+		this.aeronave = aeronave;
+		gerenciador.adicionar(this);
 	}	
 	
 	public CiaAerea getCia()
@@ -31,6 +33,10 @@ public class Rota {
 	public Aeronave getAeronave() {
 
 		return aeronave;
+	}
+
+	public GerenciadorRotas getGerenciador() {
+		return gerenciador;
 	}
 
 	public String toString() {
